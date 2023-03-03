@@ -10,7 +10,7 @@ BOTNICK = '지피티'
 
 class GPTBot:
     def __init__(self):
-        self.MEMORY = 10 #int(os.environ['MEMORY'])
+        self.MEMORY = int(os.environ['MEMORY'])
         self.CHARACTER = '챗봇'
         self.RELATIONSHIP = '주인'
         self.chat_log = DoublyLinkedList()
