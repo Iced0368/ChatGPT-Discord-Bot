@@ -39,10 +39,10 @@ async def response(ctx):
         if len(text) > 500:
             answer = str(f'{message.author.mention}님, 질문이 너무 길어요!')
         else:
-            name = message.author.nick
-            if name is None:
-                name = message.author.name
-            answer = str(f'{message.author.mention}님, {Bot.ask(text, message.author.nick)}')
+            username = message.author.nick
+            if username is None:
+                username = message.author.name
+            answer = str(f'{message.author.mention}님, {Bot.ask(text, username)}')
         await send_text(answer, ctx)
 
 
