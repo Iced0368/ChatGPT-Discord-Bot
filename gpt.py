@@ -2,17 +2,19 @@ from dlist import DoublyLinkedList
 import os, re, time
 import openai
 from util import *
+from datetime import datetime
+from pytz import timezone
 
 CHATGPT_KEY = os.environ['CHATGPT_KEY']
-
+BOTNICK = '지피티'
 
 class GPTBot:
     def __init__(self):
-        self.BOTNAME = '지피티'
         self.MEMORY = 10 #int(os.environ['MEMORY'])
         self.CHARACTER = '챗봇'
         self.RELATIONSHIP = '주인'
         self.chat_log = DoublyLinkedList()
+        self.boot_time = datetime.now()
 
     def get_log(self):
         return self.chat_log
