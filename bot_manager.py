@@ -11,7 +11,7 @@ class BotManager:
         return self.bot[id]
     
     def removeBot(self, id):
-        del self.bot.get(id)
+        del self.bot[id]
 
     def registered(self, id):
         return id in self.bot.keys()
