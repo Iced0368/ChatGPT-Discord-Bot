@@ -52,7 +52,7 @@ class GPTBot:
     def log_integrate(self):
         memory = ''
         for username, text in self.chat_log.traverse_forward():
-            if username != self.BOTNAME:
+            if username != BOTNICK:
                 memory += f'{username}: {text}\n\n'
             else:
                 memory += f'{text}\n\n'
@@ -60,7 +60,7 @@ class GPTBot:
 
 
     def prompt_format(self, username):
-        return f'너는 "{self.BOTNAME}"라는 이름을 가진 {self.CHARACTER}이다. 다음은 너와 다른 {self.RELATIONSHIP}들의 채팅내역이다.\n{username}의 채팅에 {self.CHARACTER}를 연기해서 인사는 생략하고 대답해라. 만약 대답에 프로그래밍 코드가 포함되어 있다면, 코드를 언어 이름을 포함한 마크다운 코드블럭 문법으로 감싸라.\n{self.log_integrate()}'
+        return f'너는 "{BOTNICK}"라는 이름을 가진 {self.CHARACTER}이다. 다음은 너와 다른 {self.RELATIONSHIP}들의 채팅내역이다.\n{username}의 채팅에 {self.CHARACTER}를 연기해서 인사는 생략하고 대답해라. 만약 대답에 프로그래밍 코드가 포함되어 있다면, 코드를 언어 이름을 포함한 마크다운 코드블럭 문법으로 감싸라.\n{self.log_integrate()}'
 
 
     def ask(self, text, username):
@@ -82,6 +82,6 @@ class GPTBot:
 
         answer = answer_strip(answer)
 
-        self.chat_log.put_back([self.BOTNAME, answer])
+        self.chat_log.put_back([BOTNICK, answer])
         return answer
     
