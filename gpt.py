@@ -14,7 +14,8 @@ class GPTBot:
         self.CHARACTER = '챗봇'
         self.RELATIONSHIP = '주인'
         self.chat_log = DoublyLinkedList()
-        self.boot_time = datetime.now()
+        self.REGION = 'Asia/Seoul'
+        self.boot_time = datetime.now(timezone(self.REGION))
 
     def get_log(self):
         return self.chat_log
