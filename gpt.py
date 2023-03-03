@@ -68,7 +68,7 @@ class GPTBot:
         self.chat_log.put_back([username, text])
 
         s_time = time.time()
-        while self.hat_log.size > self.MEMORY:
+        while self.chat_log.size > self.MEMORY:
             self.chat_log.remove_front()
         while True:
             try:
