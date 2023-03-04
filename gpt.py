@@ -35,7 +35,7 @@ class GPTBot:
             prompt = translate_text(prompt, 'en')
         # Call the chat GPT API
         completion = openai.Completion.create(
-                engine = "gpt-3.5-turbo"     # 'text-curie-001'  # 'text-babbage-001' #'text-ada-001'
+                engine = 'text-davinci-003'     # 'text-curie-001'  # 'text-babbage-001' #'text-ada-001'
                 , prompt = prompt
                 , temperature = 0.5
                 , max_tokens = 2048
